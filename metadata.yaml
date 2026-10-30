@@ -2,7 +2,7 @@ name: astrbot_plugin_keyword_wakeup
 display_name: 指定群关键词唤醒
 desc: 指定群命中关键词后，由 LLM 根据自定义规则和最近群消息判断是否回答
 help: 填写群列表、关键词和判断规则，保存后重载插件
-version: v1.0.1
+version: v1.0.2
 author: ma114514
 repo: "https://github.com/ma114514/astrbot_plugin_keyword_wakeup"
 astrbot_version: ">=4.28.2,<5"

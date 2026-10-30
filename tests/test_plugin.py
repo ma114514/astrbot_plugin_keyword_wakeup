@@ -15,7 +15,7 @@ from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = 'astrbot_plugin_keyword_wakeup'
-VERSION = 'v1.0.1'
+VERSION = 'v1.0.2'
 
 
 def load_plugin(path=ROOT / 'main.py'):
@@ -314,7 +314,7 @@ class JudgeTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_archive_matches_source_and_loads(self):
         with ZipFile(ROOT.parent/f'{NAME}_{VERSION}.zip') as z, tempfile.TemporaryDirectory() as temp:
-            names = {'main.py','_conf_schema.json','metadata.yaml','README.md','LICENSE'}
+            names = {'main.py','_conf_schema.json','metadata.yaml','README.md','LICENSE','docs/DEVELOPMENT.md'}
             self.assertEqual(set(z.namelist()), {f'{NAME}/{name}' for name in names})
             self.assertIsNone(z.testzip())
             for name in names:

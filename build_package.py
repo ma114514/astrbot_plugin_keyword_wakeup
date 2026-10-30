@@ -4,8 +4,8 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
 PLUGIN_NAME = "astrbot_plugin_keyword_wakeup"
-VERSION = "v1.0.1"
-PACKAGE_FILES = ("main.py", "_conf_schema.json", "metadata.yaml", "README.md", "LICENSE")
+VERSION = "v1.0.2"
+PACKAGE_FILES = ("main.py", "_conf_schema.json", "metadata.yaml", "README.md", "LICENSE", "docs/DEVELOPMENT.md")
 
 
 def build_package(output_dir: Path | None = None) -> Path:
