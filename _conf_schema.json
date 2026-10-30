@@ -1,0 +1,41 @@
+{
+  "group_ids": {
+    "description": "允许关键词唤醒的群列表",
+    "type": "list",
+    "item_type": "string",
+    "default": [],
+    "hint": "每项填写一个实际群号。多个群共用关键词；为空时停用关键词唤醒"
+  },
+  "keywords": {
+    "description": "唤醒关键词",
+    "type": "list",
+    "item_type": "string",
+    "default": [],
+    "hint": "每项一个普通文本关键词，包含任意项即可进入判断。区分大小写，不解析正则；为空时停用"
+  },
+  "judge_provider_id": {
+    "description": "判断模型",
+    "type": "string",
+    "default": "",
+    "_special": "select_provider",
+    "hint": "留空使用当前会话的聊天模型。判断通过后，正式回答仍使用当前会话的模型"
+  },
+  "judge_prompt": {
+    "description": "判断规则",
+    "type": "text",
+    "default": "结合群聊上下文，判断当前消息是否在呼叫机器人、向机器人提问或请求帮助。只是提及名字、转述或群友互聊时不回答；无法确定时不回答。",
+    "hint": "可完整修改回答标准。插件会自动追加 JSON 输出要求，无需填写变量占位符"
+  },
+  "context_messages": {
+    "description": "历史群消息条数",
+    "type": "int",
+    "default": 20,
+    "hint": "允许 0–100。0 表示只看当前消息；重载后历史清空"
+  },
+  "judge_timeout": {
+    "description": "判断超时（秒）",
+    "type": "int",
+    "default": 15,
+    "hint": "允许 1–120 秒。超时、调用失败或输出格式错误时不新增回复"
+  }
+}
